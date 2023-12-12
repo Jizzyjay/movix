@@ -9,11 +9,6 @@ const navLinks = [
   {
     name: "Home",
     icon: homeIcon,
-    link: "/home",
-  },
-  {
-    name: "Login",
-    icon: homeIcon,
     link: "/",
   },
   {
@@ -78,7 +73,7 @@ const Sidebar = () => {
             fontWeight={400}
             fontSize={18}
           >
-            PikaShowApp
+            Movix
           </Typography>
         </Hidden>
 

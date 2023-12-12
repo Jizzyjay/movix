@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
+import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 import { MovieDataType } from "../../assets/data";
 import { MovieContext } from "../../context/movie-context";
-import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 import moviesIcon from "../../assets/icons/icon-category-movie.svg";
 import tvSeriesIcon from "../../assets/icons/icon-category-tv.svg";
 import BookmarkIcon from "../icons/bookmark-icon";
@@ -16,6 +16,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
   const handleToggleBookmark = (id: string) => {
     dispatch({ type: "TOOGLE BOOKMARK", id });
   };
+  
   return (
     <Card
       variant="outlined"
