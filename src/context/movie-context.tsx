@@ -16,13 +16,14 @@ interface MovieAction {
 
 const MovieList: MovieDataType[] = moviesData;
 
-const initalMovieState: MovieState = {
+const initialMovieState: MovieState = {
   movies: MovieList,
 };
 
 const MovieReducer = (state: MovieState, action: MovieAction): MovieState => {
   switch (action.type) {
     case "TOOGLE BOOKMARK":
+      
       return {
         ...state,
         movies: state.movies.map((movie) => {
@@ -41,12 +42,12 @@ export const MovieContext = createContext<{
   state: MovieState;
   dispatch: React.Dispatch<MovieAction>;
 }>({
-  state: initalMovieState,
+  state: initialMovieState,
   dispatch: () => {},
 });
 
 export const MovieProvider = ({ children }: MovieContextProps) => {
-  const [state, dispatch] = useReducer(MovieReducer, initalMovieState);
+  const [state, dispatch] = useReducer(MovieReducer, initialMovieState);
   return (
     <MovieContext.Provider value={{ state, dispatch }}>
       {children}
